@@ -86,6 +86,10 @@ hs_err_pid*
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
 
+<<<<<<< 8d636e3562b053dd48a6cb4f3b3608eadb25feee
 
 /13029096-ejb/nbproject/private/
 /13029096-war/nbproject/private/
+=======
+*.properties
+>>>>>>> Adding Checkout and PO

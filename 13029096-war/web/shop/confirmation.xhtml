@@ -1,12 +1,36 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
-    <h:body>
-        Hello from Facelets
-    </h:body>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+             
+    <ui:composition template="/templates/common.xhtml">
+        <ui:define name="title">
+            Confirmation
+        </ui:define>  
+        <ui:define name="sidebar">
+            <p class="lead">Shop Name</p>
+            <h3>Category</h3>
+            <div class="list-group">
+                <h:dataTable value="#{catelog.productCodeList}"
+                             var="p" styleClass="list-group" >
+                    <h:column>
+                        <a href="#" class="list-group-item">#{p.description}</a>           
+                    </h:column>
+                </h:dataTable>
+            </div>
+        </ui:define>
+        <ui:define name="main_content">
+            <h4>Your order has been received.<br/>
+                Delivery is expected within two weeks.<br/>
+                    #{pO_Bean.createPO()}
+            </h4>
+            
+            
+            
+        </ui:define>
+    </ui:composition>
 </html>
+
 

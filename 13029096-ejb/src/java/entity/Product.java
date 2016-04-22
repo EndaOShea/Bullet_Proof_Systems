@@ -38,7 +38,9 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Product.findByQuantityOnHand", query = "SELECT p FROM Product p WHERE p.quantityOnHand = :quantityOnHand"),
     @NamedQuery(name = "Product.findByMarkup", query = "SELECT p FROM Product p WHERE p.markup = :markup"),
     @NamedQuery(name = "Product.findByAvailable", query = "SELECT p FROM Product p WHERE p.available = :available"),
-    @NamedQuery(name = "Product.findByDescription", query = "SELECT p FROM Product p WHERE p.description = :description")})
+    @NamedQuery(name = "Product.findByDescription", query = "SELECT p FROM Product p WHERE p.description = :description"),
+    @NamedQuery(name = "Product.findTotalQuantity", query = "SELECT p.quantityOnHand FROM Product p WHERE p.productId = :productID"),
+    @NamedQuery(name = "Product.decreaseQty", query = "UPDATE Product p SET p.quantityOnHand = p.quantityOnHand - :qty WHERE p.productId = :productID")})
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;

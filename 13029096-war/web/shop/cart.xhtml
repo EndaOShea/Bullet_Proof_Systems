@@ -26,7 +26,11 @@
                 <div class="jumbotron">
                     <h4 align="center">Your Current Shopping Cart
                         <h:commandButton style="margin-left: 60px;" styleClass="btn btn-default" action="checkout.xhtml" value="Checkout"></h:commandButton></h4>
+<<<<<<< 8d636e3562b053dd48a6cb4f3b3608eadb25feee
    
+=======
+                        <h5>#{checkoutBean.message}</h5>
+>>>>>>> Adding Checkout and PO
                         <h:dataTable  class="table-bordered " style=" padding: 8px;" value="#{cardBackingBean.returnProducts()}" var="item">
                             <h:column >
                                 <b>Product Name:&nbsp;</b>#{item.product.description}<br/> 
@@ -35,6 +39,7 @@
                                 <b>Change Quantity:&nbsp;</b><h:inputText  id="movie" style="width: 80px;" value="#{item.product_quantity}"><br/>
                                 <!--- Todo here validate user input  -->
                                 </h:inputText>&nbsp;<br/>
+<<<<<<< 8d636e3562b053dd48a6cb4f3b3608eadb25feee
 
                                 <b>Total Cost:&nbsp;</b>#{item.product.purchaseCost * item.product_quantity}<br/>
                                 <h:commandButton style="border-radius:10px; text-align: right" class="btn btn-default" value="Update" action="#{item.setProduct_quantity(item.product_quantity)}">        
@@ -53,3 +58,22 @@
 </html>
 
 
+=======
+
+                                <b>Total Cost:&nbsp;</b>#{item.product.purchaseCost * item.product_quantity}<br/>
+                                <h:commandButton style="border-radius:10px; text-align: right" class="btn btn-default" value="Update" action="#{item.setProduct_quantity(item.product_quantity)}">        
+                                </h:commandButton>&nbsp;&nbsp;
+                                <h:commandButton style="border-radius:10px; text-align: right" class="btn btn-default" action="#{cardBackingBean.removeProductFromList(item.product.productId)}" value="Remove">        
+                                </h:commandButton>&nbsp;&nbsp;
+                                <br/>
+                            </h:column>
+
+                        </h:dataTable>
+          
+                    <h7> </h7>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>
+>>>>>>> Adding Checkout and PO
